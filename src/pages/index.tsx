@@ -6,10 +6,13 @@ export default function Home() {
   return (
     <>
       <header className={styles.header}>
-        <Image src={LogoImg} width={48} />
+        <Image src={LogoImg} width={48} alt="Blog de semantica" />
 
         <nav className={styles.nav}>
-          <a href="https://github.com/DevWebFelipe">
+          <a
+            href="https://github.com/DevWebFelipe"
+            aria-label="Acessar git hub"
+          >
             <svg
               width="48"
               height="48"
@@ -78,7 +81,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.header}>
-        <Image src={LogoImg} width={48} />
+        <Image src={LogoImg} width={48} alt="Blog de semantica" />
 
         <nav className={styles.nav} aria-label="rodape">
           <a href="https://github.com/DevWebFelipe">Termos e licenças</a>
