@@ -4,11 +4,11 @@ import styles from "../styles/Home.module.css"
 
 export default function Home() {
   return (
-    <div>
-      <div className={styles.header}>
+    <>
+      <header className={styles.header}>
         <Image src={LogoImg} width={48} />
 
-        <div className={styles.nav}>
+        <nav className={styles.nav}>
           <a href="https://github.com/DevWebFelipe">
             <svg
               width="48"
@@ -29,49 +29,61 @@ export default function Home() {
               />
             </svg>
           </a>
-        </div>
-      </div>
+        </nav>
+      </header>
 
-      <div className={styles.content}>
-        <h2>Desenvolvendo uma web acessível</h2>
+      <main>
+        <article className={styles.content}>
+          <header>
+            <h1>Desenvolvendo uma web acessível</h1>
 
-        <h4>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-          nemo sint. Culpa, tempore laboriosam itaque laudantium deserunt
-          veritatis, id fugiat nisi officia impedit similique labore cumque
-          ipsam dicta cupiditate hic.
-        </h4>
+            <h2>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptas, nemo sint. Culpa, tempore laboriosam itaque laudantium
+              deserunt veritatis, id fugiat nisi officia impedit similique
+              labore cumque ipsam dicta cupiditate hic.
+            </h2>
+          </header>
 
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente,
-          dolor earum voluptate, voluptatem aut ex accusamus quaerat fuga vel
-          illum at pariatur dignissimos veniam hic id quibusdam minus
-          distinctio! Doloremque? Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. Ab expedita nemo exercitationem illum, laudantium
-          dolores quia ipsa nobis! Molestias est dignissimos reprehenderit
-          dolorem ex, tenetur eius optio ratione. Distinctio, numquam. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Ea recusandae
-          placeat assumenda? Rerum ipsam earum ut distinctio inventore
-          consectetur eaque quae debitis necessitatibus eligendi doloribus,
-          tempore dicta quo architecto aliquam!
-        </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente,
+            dolor earum voluptate, voluptatem aut ex accusamus quaerat fuga vel
+            illum at pariatur dignissimos veniam hic id quibusdam minus
+            distinctio! Doloremque? Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Ab expedita nemo exercitationem illum, laudantium
+            dolores quia ipsa nobis! Molestias est dignissimos reprehenderit
+            dolorem ex, tenetur eius optio ratione. Distinctio, numquam. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Ea recusandae
+            placeat assumenda? Rerum ipsam earum ut distinctio inventore
+            consectetur eaque quae debitis necessitatibus eligendi doloribus,
+            tempore dicta quo architecto aliquam!
+          </p>
 
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente,
-          dolor earum voluptate, voluptatem aut ex accusamus quaerat fuga vel
-          illum at pariatur dignissimos veniam hic id quibusdam minus
-          distinctio! Doloremque? Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. Ab expedita nemo exercitationem illum, laudantium
-          dolores quia ipsa nobis! Molestias est dignissimos reprehenderit
-          dolorem ex, tenetur eius optio ratione. Distinctio, numquam. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Ea recusandae
-          placeat assumenda? Rerum ipsam earum ut distinctio inventore
-          consectetur eaque quae debitis necessitatibus eligendi doloribus,
-          tempore dicta quo architecto aliquam!
-        </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente,
+            dolor earum voluptate, voluptatem aut ex accusamus quaerat fuga vel
+            illum at pariatur dignissimos veniam hic id quibusdam minus
+            distinctio! Doloremque? Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Ab expedita nemo exercitationem illum, laudantium
+            dolores quia ipsa nobis! Molestias est dignissimos reprehenderit
+            dolorem ex, tenetur eius optio ratione. Distinctio, numquam. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Ea recusandae
+            placeat assumenda? Rerum ipsam earum ut distinctio inventore
+            consectetur eaque quae debitis necessitatibus eligendi doloribus,
+            tempore dicta quo architecto aliquam!
+          </p>
 
-        <h3>O que é a acessibilidade afinal?</h3>
-      </div>
-    </div>
+          <h3>O que é a acessibilidade afinal?</h3>
+        </article>
+      </main>
+
+      <footer className={styles.header}>
+        <Image src={LogoImg} width={48} />
+
+        <nav className={styles.nav} aria-label="rodape">
+          <a href="https://github.com/DevWebFelipe">Termos e licenças</a>
+        </nav>
+      </footer>
+    </>
   )
 }
