@@ -1,10 +1,15 @@
 import Image from "next/image"
 import LogoImg from "../assets/logo.svg"
 import styles from "../styles/Home.module.css"
+import Head from "next/head"
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Desenvolvimendo uma web acessível</title>
+      </Head>
+
       <header className={styles.header}>
         <Image src={LogoImg} width={48} alt="Blog de semantica" />
 
