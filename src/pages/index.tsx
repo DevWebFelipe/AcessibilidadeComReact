@@ -80,7 +80,7 @@ export default function Home() {
         </article>
       </main>
 
-      <footer className={styles.header}>
+      <footer className={styles.footer}>
         <Image src={LogoImg} width={48} alt="Blog de semantica" />
 
         <nav className={styles.nav} aria-label="rodape">
