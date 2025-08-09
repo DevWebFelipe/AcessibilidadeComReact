@@ -1,23 +1,10 @@
+import * as Dialog from "@radix-ui/react-dialog"
 import Image from "next/image"
 import LogoImg from "../assets/logo.svg"
 import styles from "../styles/Home.module.css"
 import Head from "next/head"
-import { useEffect, useRef, useState } from "react"
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const modalRef = useRef(null)
-
-  function handleModalOpen() {
-    setIsModalOpen(true)
-  }
-
-  useEffect(() => {
-    if (isModalOpen) {
-      modalRef?.current?.focus()
-    }
-  }, [isModalOpen])
-
   return (
     <>
       <Head>
@@ -102,46 +89,43 @@ export default function Home() {
       <footer className={styles.footer}>
         <Image src={LogoImg} width={48} alt="Blog de semantica" />
 
-        <nav className={styles.nav} aria-label="rodape">
-          <button
-            type="button"
-            onClick={handleModalOpen}
-            aria-controls="modal1"
-          >
-            Termos e licenças
-          </button>
+        <nav className={styles.nav}>
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <button type="button">Termos e uso</button>
+            </Dialog.Trigger>
+
+            <Dialog.Portal>
+              <Dialog.Overlay className={styles.overlay} />
+
+              <Dialog.Content className={styles.modal}>
+                <Dialog.Title>Termos de uso</Dialog.Title>
+                <Dialog.Description>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Laboriosam placeat odio atque praesentium suscipit minima
+                  officia delectus ratione, fugit, assumenda, repellat molestiae
+                  eligendi rerum explicabo quibusdam culpa. Odit, quo velit.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Suscipit commodi inventore repellat deleniti nam alias minima
+                  obcaecati, maxime ratione tempora in quis blanditiis cumque
+                  eum quaerat dolorum, similique quos a. Lorem, ipsum dolor sit
+                  amet consectetur adipisicing elit. Quae necessitatibus
+                  expedita, perferendis dignissimos quidem aliquid repudiandae.
+                  Et est ullam quo, tempora voluptate ab non? Ex assumenda natus
+                  sapiente quo deleniti. Lorem ipsum dolor, sit amet consectetur
+                  adipisicing elit. Animi ratione vel, suscipit neque et,
+                  voluptates iusto cum vero similique repellat sunt libero
+                  corrupti illo possimus ullam aut necessitatibus aspernatur
+                  omnis!
+                </Dialog.Description>
+                <Dialog.Close asChild>
+                  <button className={styles.closeModalButton}>Fechar</button>
+                </Dialog.Close>
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
         </nav>
       </footer>
-
-      {isModalOpen && (
-        <div
-          id="modal1"
-          ref={modalRef}
-          className={styles.modal}
-          role="dialog"
-          aria-labelledby="modal1Title"
-          aria-describedby="modal1Description"
-          tabIndex={-1}
-        >
-          <h2 id="modal1Title">Termos de uso</h2>
-          <p id="modal1Description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam
-            placeat odio atque praesentium suscipit minima officia delectus
-            ratione, fugit, assumenda, repellat molestiae eligendi rerum
-            explicabo quibusdam culpa. Odit, quo velit. Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Suscipit commodi inventore
-            repellat deleniti nam alias minima obcaecati, maxime ratione tempora
-            in quis blanditiis cumque eum quaerat dolorum, similique quos a.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae
-            necessitatibus expedita, perferendis dignissimos quidem aliquid
-            repudiandae. Et est ullam quo, tempora voluptate ab non? Ex
-            assumenda natus sapiente quo deleniti. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Animi ratione vel, suscipit neque et,
-            voluptates iusto cum vero similique repellat sunt libero corrupti
-            illo possimus ullam aut necessitatibus aspernatur omnis!
-          </p>
-        </div>
-      )}
     </>
   )
 }
