@@ -10,13 +10,12 @@
   padding: 24px 20px;
 }
 
-.nav a {
+.nav button {
   color: #9875e7;
+  border: none;
 }
 
 .content {
-  color: #878686;
-
   max-width: 776px;
   width: 100%;
   margin: 0 auto;
@@ -43,9 +42,24 @@
 
   padding: 24px 20px;
 
-  & a {
+  & button {
     padding: 1rem 2rem;
+    font-size: 1rem;
     background: #202024;
     border-radius: 5px;
+    background: transparent;
   }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: #fff;
+  padding: 80px 40px;
+  border-radius: 5px;
+
+  color: #333;
 }

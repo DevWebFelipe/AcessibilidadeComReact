@@ -2,8 +2,15 @@ import Image from "next/image"
 import LogoImg from "../assets/logo.svg"
 import styles from "../styles/Home.module.css"
 import Head from "next/head"
+import { useState } from "react"
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  function handleModalOpen() {
+    setIsModalOpen(true)
+  }
+
   return (
     <>
       <Head>
@@ -89,9 +96,33 @@ export default function Home() {
         <Image src={LogoImg} width={48} alt="Blog de semantica" />
 
         <nav className={styles.nav} aria-label="rodape">
-          <a href="https://github.com/DevWebFelipe">Termos e licenças</a>
+          <button type="button" onClick={handleModalOpen}>
+            Termos e licenças
+          </button>
         </nav>
       </footer>
+
+      {isModalOpen && (
+        <div className={styles.modal}>
+          <h2>Termos de uso</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam
+            placeat odio atque praesentium suscipit minima officia delectus
+            ratione, fugit, assumenda, repellat molestiae eligendi rerum
+            explicabo quibusdam culpa. Odit, quo velit. Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Suscipit commodi inventore
+            repellat deleniti nam alias minima obcaecati, maxime ratione tempora
+            in quis blanditiis cumque eum quaerat dolorum, similique quos a.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae
+            necessitatibus expedita, perferendis dignissimos quidem aliquid
+            repudiandae. Et est ullam quo, tempora voluptate ab non? Ex
+            assumenda natus sapiente quo deleniti. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Animi ratione vel, suscipit neque et,
+            voluptates iusto cum vero similique repellat sunt libero corrupti
+            illo possimus ullam aut necessitatibus aspernatur omnis!
+          </p>
+        </div>
+      )}
     </>
   )
 }
